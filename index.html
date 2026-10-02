@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahim Restaurant</title>
+    <!-- Font Awesome Start -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Font Awesome End -->
+
+    <!-- Tailwind CSS Start -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS End -->
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Main Container Start -->
+    <div class="max-w-6xl mx-auto p-5">
+      <!-- Top Heading Part Start -->
+      <div
+        class="bg-white rounded-xl p-5 shadow-sm flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-12 h-12 bg-orange-500 text-white rounded-lg flex items-center justify-center"
+          >
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold">Fahim Restaurant</h1>
+            <p class="text-sm text-gray-500">Food & Order System</p>
+          </div>
+        </div>
+        <button
+          id="welcomeBtn"
+          class="bg-orange-500 text-white px-4 py-2 rounded-lg"
+        >
+          <i class="fa-solid fa-volume-high mr-1"></i>
+          Welcome
+        </button>
+      </div>
+      <!-- Top Heading Part End -->
+
+      <!-- Voice Box Start -->
+      <div id="voiceBox" class="hidden bg-white p-5 rounded-xl mt-5 shadow-sm">
+        <h2 class="font-bold text-lg mb-3">Voice Message</h2>
+        <div class="flex gap-2">
+          <input
+            id="voiceText"
+            type="text"
+            placeholder="Write something..."
+            class="border border-gray-300 rounded-lg px-3 py-2 w-full outline-none"
+          />
+          <button id="speakBtn" class="bg-black text-white px-5 rounded-lg">
+            Speak
+          </button>
+        </div>
+      </div>
+      <!-- Voice Box End -->
+
+      <!-- Main Content Start -->
+      <div class="flex flex-col md:flex-row gap-5 mt-5">
+        <!-- Food Part Start -->
+        <div class="w-full md:w-2/3">
+          <div class="bg-white p-5 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <h2 class="text-xl font-bold">Our Foods</h2>
+                <p class="text-sm text-gray-500">Select your favourite food</p>
+              </div>
+              <i class="fa-solid fa-burger text-orange-500 text-2xl"></i>
+            </div>
+            <!-- Food Cards Start -->
+            <div class="flex flex-wrap gap-4">
+              <!-- Burger Start -->
+              <div class="border rounded-xl p-3 w-full sm:w-[48%]">
+                <div class="h-32 rounded-lg overflow-hidden">
+                  <img
+                    src="images/burger.png"
+                    alt="Chicken Burger"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-bold mt-3">Chicken Burger</h3>
+                <p class="text-sm text-gray-500 mt-1">
+                  Chicken, cheese and vegetables
+                </p>
+                <div class="flex items-center justify-between mt-3">
+                  <span class="font-bold text-orange-500"> $8 </span>
+                  <button
+                    class="addBtn bg-orange-500 text-white px-3 py-2 rounded-lg"
+                    data-name="Chicken Burger"
+                    data-price="8"
+                    data-box="burgerOrder"
+                    data-quantity="burgerQuantity"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+              <!-- Burger End -->
+
+              <!-- Pizza Start -->
+              <div class="border rounded-xl p-3 w-full sm:w-[48%]">
+                <div class="h-32 rounded-lg overflow-hidden">
+                  <img
+                    src="images/pizza.png"
+                    alt="Cheese Pizza"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-bold mt-3">Cheese Pizza</h3>
+                <p class="text-sm text-gray-500 mt-1">
+                  Cheese with fresh tomato sauce
+                </p>
+                <div class="flex items-center justify-between mt-3">
+                  <span class="font-bold text-orange-500"> $10 </span>
+                  <button
+                    class="addBtn bg-orange-500 text-white px-3 py-2 rounded-lg"
+                    data-name="Cheese Pizza"
+                    data-price="10"
+                    data-box="pizzaOrder"
+                    data-quantity="pizzaQuantity"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+              <!-- Pizza End -->
+
+              <!-- Fried Chicken Start -->
+              <div class="border rounded-xl p-3 w-full sm:w-[48%]">
+                <div class="h-32 rounded-lg overflow-hidden">
+                  <img
+                    src="images/fry.png"
+                    alt="Fried Chicken"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="font-bold mt-3">Fried Chicken</h3>
+                <p class="text-sm text-gray-500 mt-1">Crispy fried chicken</p>
+                <div class="flex items-center justify-between mt-3">
+                  <span class="font-bold text-orange-500"> $7 </span>
+                  <button
+                    class="addBtn bg-orange-500 text-white px-3 py-2 rounded-lg"
+                    data-name="Fried Chicken"
+                    data-price="7"
+                    data-box="chickenOrder"
+                    data-quantity="chickenQuantity"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+              <!-- Fried Chicken End -->
+
+              <!-- Biriyani Start -->
+              <div class="border rounded-xl p-3 w-full sm:w-[48%]">
+                <div class="h-32 rounded-lg overflow-hidden">
+                  <img
+                    src="images/biriyani.png"
+                    alt="Biriyani"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+
+                <h3 class="font-bold mt-3">Biriyani</h3>
+
+                <p class="text-sm text-gray-500 mt-1">
+                  Mutton Biriyani with long grain rice
+                </p>
+
+                <div class="flex items-center justify-between mt-3">
+                  <span class="font-bold text-orange-500"> $20 </span>
+
+                  <button
+                    class="addBtn bg-orange-500 text-white px-3 py-2 rounded-lg"
+                    data-name="Biriyani"
+                    data-price="20"
+                    data-box="biriyaniOrder"
+                    data-quantity="biriyaniQuantity"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                    Add
+                  </button>
+                </div>
+              </div>
+              <!-- Biriyani End -->
+            </div>
+            <!-- Food Cards End -->
+          </div>
+        </div>
+        <!-- Food Part End -->
+
+        <!-- Order Part Start -->
+        <div class="w-full md:w-1/3">
+          <div class="bg-white rounded-xl p-5 shadow-sm">
+            <h2 class="text-xl font-bold">Your Order</h2>
+
+            <p class="text-sm text-gray-500 mt-1">Table No: 05</p>
+
+            <!-- Customer Name Start -->
+            <div class="mt-5">
+              <label for="customerName" class="text-sm font-semibold">
+                Customer Name
+              </label>
+
+              <input
+                id="customerName"
+                type="text"
+                placeholder="Enter name"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2 mt-2 outline-none"
+              />
+            </div>
+            <!-- Customer Name End -->
+
+            <!-- Spicy Level Start -->
+            <div class="mt-5">
+              <label class="text-sm font-semibold"> Spicy Level </label>
+
+              <div class="flex gap-2 mt-2">
+                <button
+                  class="spicyBtn border px-3 py-2 rounded-lg text-sm"
+                  data-spicy="Mild"
+                >
+                  <i class="fa-regular fa-face-smile"></i>
+                  Mild
+                </button>
+
+                <button
+                  class="spicyBtn border px-3 py-2 rounded-lg text-sm"
+                  data-spicy="Medium"
+                >
+                  <i class="fa-solid fa-pepper-hot"></i>
+                  Medium
+                </button>
+
+                <button
+                  class="spicyBtn border px-3 py-2 rounded-lg text-sm"
+                  data-spicy="Hot"
+                >
+                  <i class="fa-solid fa-fire"></i>
+                  Hot
+                </button>
+              </div>
+
+              <p id="spicyText" class="text-xs text-gray-500 mt-2">
+                Select spicy level
+              </p>
+            </div>
+            <!-- Spicy Level End -->
+
+            <!-- Order Items Start -->
+            <div class="mt-5">
+              <h3 class="font-bold mb-3">Items</h3>
+
+              <div id="orderItems">
+                <!-- Burger Order Start -->
+                <div
+                  id="burgerOrder"
+                  class="foodOrder hidden flex items-center justify-between border-b pb-3 mb-3"
+                  data-price="8"
+                  data-quantity="burgerQuantity"
+                >
+                  <div>
+                    <h4 class="font-semibold text-sm">Chicken Burger</h4>
+
+                    <p class="text-xs text-gray-500">$8</p>
+
+                    <span class="text-xs text-orange-500"> Mild </span>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="minusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-box="burgerOrder"
+                      data-quantity="burgerQuantity"
+                    >
+                      -
+                    </button>
+
+                    <span id="burgerQuantity"> 1 </span>
+
+                    <button
+                      class="plusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-quantity="burgerQuantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <!-- Burger Order End -->
+
+                <!-- Pizza Order Start -->
+                <div
+                  id="pizzaOrder"
+                  class="foodOrder hidden flex items-center justify-between border-b pb-3 mb-3"
+                  data-price="10"
+                  data-quantity="pizzaQuantity"
+                >
+                  <div>
+                    <h4 class="font-semibold text-sm">Cheese Pizza</h4>
+
+                    <p class="text-xs text-gray-500">$10</p>
+
+                    <span class="text-xs text-orange-500"> Mild </span>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="minusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-box="pizzaOrder"
+                      data-quantity="pizzaQuantity"
+                    >
+                      -
+                    </button>
+
+                    <span id="pizzaQuantity"> 1 </span>
+
+                    <button
+                      class="plusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-quantity="pizzaQuantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <!-- Pizza Order End -->
+
+                <!-- Chicken Order Start -->
+                <div
+                  id="chickenOrder"
+                  class="foodOrder hidden flex items-center justify-between border-b pb-3 mb-3"
+                  data-price="7"
+                  data-quantity="chickenQuantity"
+                >
+                  <div>
+                    <h4 class="font-semibold text-sm">Fried Chicken</h4>
+
+                    <p class="text-xs text-gray-500">$7</p>
+
+                    <span class="text-xs text-orange-500"> Mild </span>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="minusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-box="chickenOrder"
+                      data-quantity="chickenQuantity"
+                    >
+                      -
+                    </button>
+
+                    <span id="chickenQuantity"> 1 </span>
+
+                    <button
+                      class="plusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-quantity="chickenQuantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <!-- Chicken Order End -->
+
+                <!-- Biriyani Order Start -->
+                <div
+                  id="biriyaniOrder"
+                  class="foodOrder hidden flex items-center justify-between border-b pb-3 mb-3"
+                  data-price="20"
+                  data-quantity="biriyaniQuantity"
+                >
+                  <div>
+                    <h4 class="font-semibold text-sm">Biriyani</h4>
+
+                    <p class="text-xs text-gray-500">$20</p>
+
+                    <span class="text-xs text-orange-500"> Mild </span>
+                  </div>
+
+                  <div class="flex items-center gap-2">
+                    <button
+                      class="minusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-box="biriyaniOrder"
+                      data-quantity="biriyaniQuantity"
+                    >
+                      -
+                    </button>
+
+                    <span id="biriyaniQuantity"> 1 </span>
+
+                    <button
+                      class="plusBtn bg-gray-200 w-7 h-7 rounded"
+                      data-quantity="biriyaniQuantity"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <!-- Biriyani Order End -->
+              </div>
+            </div>
+            <!-- Order Items End -->
+
+            <!-- Total Part Start -->
+            <div class="border-t mt-5 pt-4">
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-500"> Subtotal </span>
+
+                <span id="subtotal"> $0 </span>
+              </div>
+
+              <div class="flex justify-between mb-2">
+                <span class="text-gray-500"> Tax </span>
+
+                <span id="tax"> $0 </span>
+              </div>
+
+              <div class="flex justify-between font-bold text-lg mt-3">
+                <span> Total </span>
+
+                <span id="total" class="text-orange-500"> $0 </span>
+              </div>
+            </div>
+            <!-- Total Part End -->
+
+            <!-- Place Order Start -->
+            <button
+              id="orderBtn"
+              class="w-full bg-orange-500 text-white py-3 rounded-lg mt-5 font-semibold"
+            >
+              <i class="fa-solid fa-check mr-2"></i>
+
+              Place Order
+            </button>
+            <!-- Place Order End -->
+          </div>
+        </div>
+        <!-- Order Part End -->
+      </div>
+      <!-- Main Content End -->
+    </div>
+    <!-- Main Container End -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
